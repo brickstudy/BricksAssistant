@@ -8,8 +8,12 @@ import src.message as msg
 # env setting
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
+# bot setting
 intents = discord.Intents.default()
 intents.message_content = True
+intents.guilds = True
+intents.members = True
+intents.messages = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 
@@ -20,24 +24,28 @@ async def ping(ctx):
 
 
 @bot.command()
-async def test_msg(ctx):
-    await msg.get_test_msg(ctx)
-
-
-@bot.command()
-async def GPT(ctx):
-    await ctx.send("hi GPT!")
+async def GPT(ctx, *, query: str):
+    await msg.get_gpt_answer(ctx, query)
 
 
 @bot.event
 async def on_message(message):
+    # Except bot answer
     if message.author == bot.user:
         return
-    print(message)
-    print()
-    print(message.author)
 
-    await bot.process_commands(message)
+    # Except not command
+    if not message.content.startswith("!"):
+        return
+
+    # Command
+    if message.content.startswith("!GPT"):
+        ctx = await bot.get_context(message)
+        await bot.invoke(ctx)
+    elif message.content.startswith("!ping"):
+        await bot.process_commands(message)
+    else:
+        await message.channel.send("Unknown command!!")
 
 
 # discord setting
