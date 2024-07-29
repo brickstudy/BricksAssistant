@@ -20,13 +20,24 @@ async def ping(ctx):
 
 
 @bot.command()
-async def help1(ctx):
-    await ctx.send("Pong!")
+async def test_msg(ctx):
+    await msg.get_test_msg(ctx)
 
 
 @bot.command()
 async def GPT(ctx):
     await ctx.send("hi GPT!")
+
+
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+    print(message)
+    print()
+    print(message.author)
+
+    await bot.process_commands(message)
 
 
 # discord setting
