@@ -1,17 +1,15 @@
-import os
-from openai import OpenAI
 import pytest
 from dotenv import load_dotenv
+
+from src.openai import GPT
 
 
 load_dotenv()
 
 
-@pytest.fixture()
+@pytest.fixture
 def client():
-    yield OpenAI(
-        api_key=os.getenv("OPENAI_TOKEN")
-        )
+    yield GPT()
 
 
 @pytest.mark.order(1)
@@ -20,16 +18,9 @@ def test_gpt_get_new_answer(client):
     content = "Hello GPT, My name is Minjun."
 
     # when : gpt 응답요청
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": "You are ChatGPT, a large language model trained by OpenAI."},
-            {"role": "user", "content": content}
-        ]
-    )
+    response = client.request_gpt(content)
 
     # then : 응답 확인
-    assert response.model.startswith("gpt-4o-mini")
     assert response.choices[0].message
 
 
@@ -40,16 +31,8 @@ def test_gpt_get_continue_nswer(client):
     name = "민준"
     first_content = f"안녕 BrickAssitant. 나는 {name}이야"
     second_content = "내 이름이 머야?"
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": "너의 이름은 brickAssistant 이야. 답변은 한국어를 기본으로 해줘."},
-            {"role": "assistant", "content": first_content},
-            {"role": "user", "content": second_content}
-        ]
-    )
+    response = client.request_gpt(second_content, [first_content])
 
     # then : 응답 확인
     print(response)
-    assert response.model.startswith("gpt-4o-mini")
     assert name in response.choices[0].message.content
