@@ -1,8 +1,10 @@
 import os
 import openai
 
+from src.infra.gpt.abs_gpt import AbstractApiGPT
 
-class GPT:
+
+class ChatGPT(AbstractApiGPT):
     def __init__(self) -> None:
         self.client = openai.OpenAI(api_key=os.getenv("OPENAI_TOKEN"))
         self.model = "gpt-4o-mini"

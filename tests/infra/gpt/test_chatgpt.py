@@ -1,7 +1,7 @@
 import pytest
 from dotenv import load_dotenv
 
-from src.openai import GPT
+from src.adapter.gpt import GPTFactory
 
 
 load_dotenv()
@@ -9,7 +9,7 @@ load_dotenv()
 
 @pytest.fixture
 def client():
-    yield GPT()
+    yield GPTFactory.create_client(gpt_type="chatgpt")
 
 
 @pytest.mark.order(1)

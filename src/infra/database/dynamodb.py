@@ -2,7 +2,7 @@ import os
 import boto3
 from boto3.dynamodb.conditions import Key
 
-from src.infra.database.database_abs import AbstractDatabaseGPT
+from src.infra.database.abs_database import AbstractDatabaseGPT
 
 
 class Dynamodb(AbstractDatabaseGPT):
