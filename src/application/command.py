@@ -8,7 +8,7 @@ async def get_pong(ctx):
     await ctx.send("Pong!")
 
 
-async def get_gpt_answer(ctx, question):
+async def get_gpt_answer(ctx, question: str):
     now = datetime.now()
     user = ctx.message.author
 

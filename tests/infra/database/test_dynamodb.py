@@ -7,7 +7,7 @@ from src.adapter.database import DatabaseFactory
 load_dotenv()
 
 # Mock
-THREAD_ID = "126765985734800183455"
+THREAD_ID = 126765985734800183455
 now = datetime.now()
 REQUEST_TIME = now.strftime('%Y-%m-%d %H:%M:%S')
 CHANNEL_NAME = "bricksgpt-test"

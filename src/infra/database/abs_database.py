@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
+from src.application.entity import GPTConversationInfo
 
 
 class AbstractDatabaseGPT(ABC):
     @abstractmethod
-    def insert_item(self, item: dict):
+    def insert_item(self, item: GPTConversationInfo):
         """데이터베이스에 GPT 요청 응답 데이터 삽입하는 추상화 메서드"""
         pass
 
