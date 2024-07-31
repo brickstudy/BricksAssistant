@@ -1,7 +1,7 @@
 import pytest
 from datetime import datetime
 from dotenv import load_dotenv
-from src.dynamodb import Dynamodb
+from src.adapter.database import DatabaseFactory
 
 
 load_dotenv()
@@ -17,7 +17,7 @@ USER_MSG = f"안녕 BrickAssitant. 나는 {NAME}이야"
 
 @pytest.fixture
 def DB():
-    yield Dynamodb()
+    yield DatabaseFactory.create_database_gpt("dynamodb")
 
 
 @pytest.mark.order(1)

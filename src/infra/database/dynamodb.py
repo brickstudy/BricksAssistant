@@ -2,8 +2,10 @@ import os
 import boto3
 from boto3.dynamodb.conditions import Key
 
+from src.infra.database.database_abs import AbstractDatabaseGPT
 
-class Dynamodb:
+
+class Dynamodb(AbstractDatabaseGPT):
     def __init__(self) -> None:
         dynamodb = boto3.resource('dynamodb',
                                   aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
