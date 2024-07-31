@@ -1,4 +1,4 @@
-from src.bot import run_bot
+from src.adapter.bot import run_bot
 
 
 # discord runner

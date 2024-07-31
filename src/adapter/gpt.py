@@ -6,3 +6,5 @@ class GPTFactory:
     def create_client(gpt_type: str = "chatgpt"):
         if gpt_type == "chatgpt":
             return ChatGPT()
+        else:
+            raise ValueError(f"Unknown gpt type: {gpt_type}")
