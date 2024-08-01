@@ -2,7 +2,7 @@ import os
 import discord
 from discord.ext import commands
 
-import src.message as msg
+import src.application.command as command
 
 
 # env setting
@@ -20,12 +20,12 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 # discord commands
 @bot.command()
 async def ping(ctx):
-    await msg.get_pong(ctx)
+    await command.get_pong(ctx)
 
 
 @bot.command()
-async def GPT(ctx, *, query: str):
-    await msg.get_gpt_answer(ctx, query)
+async def GPT(ctx, *, question: str):
+    await command.get_gpt_answer(ctx, question)
 
 
 @bot.event

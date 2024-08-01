@@ -1,16 +1,19 @@
 import os
 import openai
 
+from src.infra.gpt.abs_gpt import AbstractApiGPT
 
-class GPT:
+
+class ChatGPT(AbstractApiGPT):
     def __init__(self) -> None:
         self.client = openai.OpenAI(api_key=os.getenv("OPENAI_TOKEN"))
         self.model = "gpt-4o-mini"
         self.messages = [
             {
                 "role": "system",
-                "content": "너의 이름은 brickAssistant 이야. 답변은 한국어를 기본으로 해줘. "
-                + "답변 마지막에 핵심 내용만 bullet form으로 요약해줘."
+                "content": "너의 이름은 brickAssistant 이야. 답변은 한국어를 기본으로 해줘."
+                + "role의 assistant의 메시지는 너가 이전에 나랑 대화한 내용이야"
+                + "답변 마지막에 핵심 내용만 bullet form으로 요약해줘. 핵심 요약이라는 말 없이 바로 bullet form으로 요약해줘"
             }
         ]
 
