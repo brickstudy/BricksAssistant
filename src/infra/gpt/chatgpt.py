@@ -12,7 +12,7 @@ class ChatGPT(AbstractApiGPT):
             {
                 "role": "system",
                 "content": "너의 이름은 brickAssistant 이야. 답변은 한국어를 기본으로 해줘. "
-                + "답변 마지막에 핵심 내용만 bullet form으로 요약해줘."
+                + "답변 마지막에 핵심 내용만 bullet form으로 요약해줘. 핵심 요약이라는 말 없이 바로 bullet form으로 요약해줘"
             }
         ]
 
