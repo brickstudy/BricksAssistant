@@ -7,7 +7,9 @@ class GPTRequestService:
         history = []
         if info.thread_id:
             response = db.get_item(info.thread_id)
-            for r in response:
+            for idx, r in enumerate(reversed(response)):
+                if idx == 5: break  # 최근 5개만 저장
+
                 history_q = r["question"]
                 hisotry_a = r["record"]
                 content = f"user: {history_q}, brickAssistant: {hisotry_a}"
