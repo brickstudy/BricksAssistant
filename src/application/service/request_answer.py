@@ -18,10 +18,11 @@ class GPTRequestService:
         all_answer = response.choices[0].message.content
 
         # split answer
-        lines = all_answer.split('\n-')
+        lines = all_answer.split('[Summary]')
         info.answer = lines[0]
+
         if len(lines) > 1:
-            info.record = ", ".join(lines[1:])
+            info.record = lines[1]
 
         # insert db
         items = info.to_dict()
