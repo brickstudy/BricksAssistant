@@ -19,6 +19,7 @@ def test_gpt_get_new_answer(client):
 
     # when : gpt 응답요청
     response = client.request_gpt(content)
+    print(response)
 
     # then : 응답 확인
     assert response.choices[0].message

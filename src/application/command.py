@@ -6,6 +6,7 @@ from src.adapter.database import DatabaseFactory
 from src.application.entity import GPTConversationInfo
 from src.application.service.request_answer import GPTRequestService
 
+
 async def get_pong(ctx):
     await ctx.send("Pong!")
 
