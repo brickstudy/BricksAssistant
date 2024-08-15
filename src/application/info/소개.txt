@@ -6,13 +6,13 @@
 저희 Brickstudy는 데이터/AI 프로젝트 모임으로 데이터 직군으로 성장하려는 사람들이 모여 함께 고민하고 성장하는 것을 목표로하는 모임입니다.
 
 
-## **Motivation**
+## **1.Motivation**
 
 - 데이터 직군(DE, DS, AI, 서비스 기획 등)의 경우 다른 일반 개발 직군에 비해 혼자서 프로젝트를 진행하는데 많은 시간, 비용적인 부분에 어려움이 있습니다.
 - 이러한 문제를 해결하고자 공통된 데이터 플랫폼을 기반으로 여러 프로젝트를 진행 및 협력하여 더 높은 수준의 프로젝트를 진행할 수 있는 모임을 진행하고자 **Brickstudy**라는 모임을 기획했습니다.
 
 
-## **Meaning of the Name "Brickstudy”**
+## **2.Meaning of the Name "Brickstudy”**
 
 - Brickstudy는 벽돌을 의미하는 `Brick`과 공부를 의미하는 `Study` 를 합쳐서 만들어진 이름입니다.
 - ***Brick***
@@ -21,7 +21,7 @@
     - 지속적인 학습과 성장을 추구하는 모임의 목표를 반영합니다.
 
 
-## **Key Activities**
+## **3.Key Activities**
 
 - 개별 프로젝트(AI, 스터디, 연구 등) 진행 및 리딩
 - 매주 온라인 공유회를 통한 지식 공유
@@ -29,14 +29,14 @@
 - 데이터 엔지니어와 데이터 플랫폼을 활용한 고수준의 프로젝트 진행
 
 
-## **Infra**
+## **4.Infra**
 
 - 공용 PC : Airflow, Kafka
 - 클라우드 : AWS S3, RDS(MySQL), DocumentDB, Lambda, MLFlow
 - 협업 : Github, Discord(+Brickassitant), Tistory(blog)
 
 
-## **Member Roles**
+## **5.Member Roles**
 
 ### **Bricks member**
 - Brickstudy 모든 인프라 사용 권한 및 활동에 참여하는 인원

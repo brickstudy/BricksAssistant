@@ -3,7 +3,7 @@
 
 Brickstudy 권한은 Brickst member와 Project member를 분리해서 관리하고 있습니다.
 
-## **Bricks member 권한**
+## **1.Bricks member 권한**
 
 ### 인프라 사용 권한
 1. ML/데이터 플랫폼 : Airflow, Kafka, MLflow
@@ -18,7 +18,7 @@ Brickstudy 권한은 Brickst member와 Project member를 분리해서 관리하�
 4. 공용 블로그 작성 권한 : Brickstudy에서 운영 중인 공용 블로그 작성 권한
 
 
-## **Project member 권한**
+## **2.Project member 권한**
 
 ### 인프라 사용 권한
 1. ML/데이터 플랫폼 : MLflow
@@ -36,7 +36,7 @@ Brickstudy 권한은 Brickst member와 Project member를 분리해서 관리하�
 
 
 
-## 권한 부여 및 관리자
+## **3.권한 부여 및 관리자**
 
 - **DE_김민준**
 (권한 필요 시 프로젝트 디스코드 채널에서 태그 후 문의 부탁드립니다.)
