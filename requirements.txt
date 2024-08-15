@@ -23,6 +23,7 @@ packaging
 pluggy
 pydantic
 pydantic_core
+PyMySQL
 pytest
 pytest-asyncio
 pytest-order
@@ -31,6 +32,7 @@ python-dotenv
 s3transfer
 six
 sniffio
+SQLAlchemy
 tomli
 tqdm
 typing_extensions

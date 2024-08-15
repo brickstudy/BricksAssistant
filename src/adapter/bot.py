@@ -28,6 +28,11 @@ async def GPT(ctx, *, question: str):
     await command.get_gpt_answer(ctx, question)
 
 
+@bot.command()
+async def info(ctx, arg: str = None):
+    await command.get_info(ctx, arg)
+
+
 @bot.event
 async def on_message(message):
     # Except bot answer
@@ -42,6 +47,8 @@ async def on_message(message):
     if message.content.startswith("!GPT"):
         ctx = await bot.get_context(message)
         await bot.invoke(ctx)
+    elif message.content.startswith("!info"):
+        await bot.process_commands(message)
     elif message.content.startswith("!ping"):
         await bot.process_commands(message)
     else:
