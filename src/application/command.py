@@ -6,6 +6,7 @@ from src.adapter.gpt import GPTFactory
 from src.adapter.database import DatabaseFactory
 from src.application.entity import GPTConversationInfo
 from src.application.service.request_answer import GPTRequestService
+from src.application.service.get_shortcut import ShortcutService
 
 
 async def get_pong(ctx):
@@ -50,7 +51,7 @@ async def get_info(ctx, arg: str):
     info_path = os.path.abspath(os.path.join(application_path, "info"))
     # Check arg
     if not arg:
-        await ctx.send("사용 가능한 명령어:\n\n!intro 소개\n!intro 권한\n!intro 인프라")
+        await ctx.send("사용 가능한 명령어:\n\n!info 소개\n!info 권한\n!info 바로가기")
     elif arg == "소개":
         try:
             with open(info_path + "/소개.txt", 'r', encoding="utf-8") as f:
@@ -65,5 +66,16 @@ async def get_info(ctx, arg: str):
                 await ctx.send(content)
         except FileNotFoundError:
             await ctx.send("권한 파일을 찾을 수 없습니다. 관리자에게 문의해주세요.")
+    elif arg == "바로가기":
+        try:
+            db = DatabaseFactory.create_database_brickas("mysql")
+            service = ShortcutService()
+
+            content = service.get_shortcut(db)
+            await ctx.send(content)
+        except Exception as e:
+            print(e)
+            await ctx.send("바로가기를 찾을 수 없습니다. 관리자에게 문의해주세요.")
+
     else:
         await ctx.send("잘못된 명령어입니다. !intro 만 입력하여 사용 가능한 명령어를 확인하세요.")
