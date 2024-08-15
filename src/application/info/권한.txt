@@ -1,0 +1,42 @@
+# **Brickstudy 권한관리**
+
+
+Brickstudy 권한은 Brickst member와 Project member를 분리해서 관리하고 있습니다.
+
+## **Bricks member 권한**
+
+### 인프라 사용 권한
+1. ML/데이터 플랫폼 : Airflow, Kafka, MLflow
+2. 데이터 저장소 : S3, RDS(MySQL), MongoDB
+3. 생성형 AI : chatgpt
+4. 협업 : Github repo, Discord, google drive, google meets
+
+### 모임 활동 권한
+1. 공유회 참여 : 온라인, 오프라인 공유회 참여. 참여 후 영상 녹화본 공유
+2. 디스코드 개별 채널 : 프로젝트 진행을 위한 디스코드 개별 채널 제공
+3. 프로젝트 별 DE 담당자 배정 : 프로젝트 진행 시 담당 DE 배정을 통한 데이터 활용 증대
+4. 공용 블로그 작성 권한 : Brickstudy에서 운영 중인 공용 블로그 작성 권한
+
+
+## **Project member 권한**
+
+### 인프라 사용 권한
+1. ML/데이터 플랫폼 : MLflow
+2. 데이터 저장소 : S3(Read only), RDS, MongoDB
+3. 생성형 AI : chatgpt(Brickassitant만 사용 가능, 토큰 키 전달X)
+4. 협업 : Github repo, Discord
+
+
+### 모임 활동 권한
+1. 공유회 영상 : Bricks member에 의해 영상 공유 가능
+2. 디스코드 공용 채널 : 공용으로 관리되는 채널만 참여 가능
+3. 공용 블로그 작성 권한 : 필요시 권한 부여
+
+(위의 권한은 프로젝트 진행에 따라 변경될 예정입니다.)
+
+
+
+## 권한 부여 및 관리자
+
+- **DE_김민준**
+(권한 필요 시 프로젝트 디스코드 채널에서 태그 후 문의 부탁드립니다.)
